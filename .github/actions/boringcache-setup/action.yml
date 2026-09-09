@@ -31,6 +31,8 @@ runs:
         cp operator/.boringcache.toml source/.boringcache.toml
         cp operator/.github/boringcache-build.sh source/.github/boringcache-build.sh
         sed -i "s/VALIDATION_SEED/$VALIDATION_SEED/g; s/VALIDATION_CHECK/$VALIDATION_CHECK/g" source/.boringcache.toml
+        printf '/.boringcache.toml\n/.github/boringcache-build.sh\n/.moagan-home/\n' >> source/.git/info/exclude
+        test -z "$(git -C source status --porcelain)"
         mkdir -p "$RUNNER_TEMP/validation"
         echo "CARGO_HOME=$HOME/.cargo" >> "$GITHUB_ENV"
         git -C source rev-parse HEAD > "$RUNNER_TEMP/validation/source.txt"
