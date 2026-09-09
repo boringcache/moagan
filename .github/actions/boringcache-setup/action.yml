@@ -32,5 +32,6 @@ runs:
         cp operator/.github/boringcache-build.sh source/.github/boringcache-build.sh
         sed -i "s/VALIDATION_SEED/$VALIDATION_SEED/g; s/VALIDATION_CHECK/$VALIDATION_CHECK/g" source/.boringcache.toml
         mkdir -p "$RUNNER_TEMP/validation"
+        echo "CARGO_HOME=$HOME/.cargo" >> "$GITHUB_ENV"
         git -C source rev-parse HEAD > "$RUNNER_TEMP/validation/source.txt"
         rustc -Vv > "$RUNNER_TEMP/validation/rustc.txt"

@@ -21,6 +21,7 @@ concurrency:
   cancel-in-progress: false
 env:
   CARGO_INCREMENTAL: '0'
+  CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER: env -u CARGO_TARGET_DIR -u RUSTC_WRAPPER -u CC -u CXX
   CARGO_TERM_COLOR: never
   RUST_BACKTRACE: '1'
 jobs:

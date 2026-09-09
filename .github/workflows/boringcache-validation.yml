@@ -16,6 +16,7 @@ concurrency:
   cancel-in-progress: false
 env:
   CARGO_INCREMENTAL: '0'
+  CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER: env -u CARGO_TARGET_DIR -u RUSTC_WRAPPER -u CC -u CXX
   CARGO_TERM_COLOR: never
   RUST_BACKTRACE: '1'
 jobs:
@@ -26,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: 5929527a011ddcd63a58e26e4aa5b3e78c6467f0
+          ref: f5c7605ba1d15a7b879e8f428e7e8726022fdbf3
           persist-credentials: false
       - uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772
         with:
@@ -59,7 +60,7 @@ jobs:
           persist-credentials: false
       - uses: ./operator/.github/actions/boringcache-setup
         with:
-          source_ref: 5929527a011ddcd63a58e26e4aa5b3e78c6467f0
+          source_ref: f5c7605ba1d15a7b879e8f428e7e8726022fdbf3
           cache_seed: ${{ github.run_id }}
           check: ${{ matrix.check }}
       - name: Restore the corrected upstream Cargo cache
@@ -125,7 +126,7 @@ jobs:
           persist-credentials: false
       - uses: ./operator/.github/actions/boringcache-setup
         with:
-          source_ref: 5929527a011ddcd63a58e26e4aa5b3e78c6467f0
+          source_ref: f5c7605ba1d15a7b879e8f428e7e8726022fdbf3
           cache_seed: ${{ github.run_id }}
           check: ${{ matrix.check }}
       - name: Restore the corrected upstream Cargo cache
