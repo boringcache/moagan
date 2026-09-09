@@ -1,5 +1,8 @@
 name: BoringCache Cargo rolling validation
 on:
+  push:
+    branches: [boringcache-validation]
+    paths: [.github/workflows/boringcache-rolling.yml]
   workflow_dispatch:
     inputs:
       source_ref:
@@ -28,7 +31,7 @@ jobs:
   commit:
     name: ${{ matrix.provider }} ${{ matrix.check }} commit
     
-    if: github.repository == 'boringcache/moagan' && github.ref == 'refs/heads/boringcache-validation'
+    if: github.event_name == 'workflow_dispatch' && github.repository == 'boringcache/moagan' && github.ref == 'refs/heads/boringcache-validation'
     strategy:
       fail-fast: false
       max-parallel: 6
