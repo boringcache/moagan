@@ -1,8 +1,10 @@
 # Moagan cache validation
 
+Current workflows pin [One v1.30.0](https://github.com/boringcache/one/releases/tag/v1.30.0) at `a610ec5a564efd9b360925056dbade04deb5def6`. Measurements below are from v1.21.0.
+
 **Qualified.** All 36 workload checks passed: six checks on each provider, across cold, fresh-runner warm and a real upstream revision. Formatting and dependency guards also passed. [Cold/warm run](https://github.com/boringcache/moagan/actions/runs/34322754671) · [Revision run](https://github.com/boringcache/moagan/actions/runs/34322956237) · [Measurements](boringcache-validation.json).
 
-One v1.21.0 is pinned to `90111526eb218a7f1e119ac2b29f765bd4d82734` and uses GitHub OIDC. One manages dependency archives; the public Cargo adapter manages typed target snapshots and native sccache. Both providers use only Rust 1.97.1, the upstream two-job Cargo setting and the same checks. GitHub warm jobs require an exact cache hit.
+The measured runs used One v1.21.0 at `90111526eb218a7f1e119ac2b29f765bd4d82734` with GitHub OIDC. One manages dependency archives; the public Cargo adapter manages typed target snapshots and native sccache. Both providers use only Rust 1.97.1, the upstream two-job Cargo setting and the same checks. GitHub warm jobs require an exact cache hit.
 
 Each cell is **GitHub / BoringCache whole-job seconds**:
 
