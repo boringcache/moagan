@@ -28,6 +28,12 @@ runs:
         VALIDATION_SEED: ${{ inputs.cache_seed }}
         VALIDATION_CHECK: ${{ inputs.check }}
       run: |
+        while read -r toolchain _; do
+          case "$toolchain" in
+            1.97.1-*) ;;
+            *) rustup toolchain uninstall "$toolchain" ;;
+          esac
+        done < <(rustup toolchain list --quiet)
         cp operator/.boringcache.toml source/.boringcache.toml
         cp operator/.github/boringcache-build.sh source/.github/boringcache-build.sh
         sed -i "s/VALIDATION_SEED/$VALIDATION_SEED/g; s/VALIDATION_CHECK/$VALIDATION_CHECK/g" source/.boringcache.toml

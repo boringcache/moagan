@@ -130,6 +130,7 @@ jobs:
           cache_seed: ${{ github.run_id }}
           check: ${{ matrix.check }}
       - name: Restore the corrected upstream Cargo cache
+        id: github-cache
         if: matrix.provider == 'GitHub'
         uses: Swatinem/rust-cache@63fed3e2fecf6f7b51dc6f043341b79ef82a9ae7 # v2.9.2
         with:
@@ -138,6 +139,9 @@ jobs:
           cache-workspace-crates: true
           lookup-only: false
           save-if: 'false'
+      - name: Require the prepared GitHub cache
+        if: matrix.provider == 'GitHub' && steps.github-cache.outputs.cache-hit != 'true'
+        run: echo 'The fresh-runner warm comparison requires a cache hit.' >&2; exit 1
       - name: Install the native compiler-cache prerequisite
         if: matrix.provider == 'BoringCache'
         uses: taiki-e/install-action@84f5ac3124727fb3d284d4d22ee9ab3654fd09a6
