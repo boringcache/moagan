@@ -1,0 +1,1784 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "integration": {
+    "action": "boringcache/one@90111526eb218a7f1e119ac2b29f765bd4d82734",
+    "version": "1.21.0",
+    "authentication": "GitHub OIDC",
+    "rust": "1.97.1",
+    "compiler_cache": "sccache 0.17.0"
+  },
+  "sources": {
+    "cold_warm": "f5c7605ba1d15a7b879e8f428e7e8726022fdbf3",
+    "next_revision": "5929527a011ddcd63a58e26e4aa5b3e78c6467f0"
+  },
+  "runs": [
+    {
+      "id": "34322754671",
+      "url": "https://github.com/boringcache/moagan/actions/runs/34322754671",
+      "metrics": {
+        "session_count": 59,
+        "total_hits": 987,
+        "total_misses": 3845,
+        "total_errors": 0,
+        "total_bytes_read": 3161391160,
+        "total_bytes_written": 881932250,
+        "duration_seconds": 147.4,
+        "read_label": "Remote read lookups",
+        "hit_label": "Remote hits",
+        "miss_label": "Missed lookups",
+        "hit_count_label": "remote hit",
+        "miss_count_label": "missed lookup"
+      },
+      "phases": [
+        {
+          "job": "cold",
+          "phases": [],
+          "tools": [
+            "archive",
+            "sccache"
+          ],
+          "cache_layers": [
+            "dependencies",
+            "target",
+            "sccache"
+          ],
+          "hits": 969,
+          "misses": 3845,
+          "errors": 0,
+          "bytes_read": 265490035,
+          "bytes_written": 881932250,
+          "duration_seconds": 1072.8
+        },
+        {
+          "job": "warm",
+          "phases": [],
+          "tools": [
+            "archive",
+            "sccache"
+          ],
+          "cache_layers": [
+            "dependencies",
+            "target",
+            "sccache"
+          ],
+          "hits": 18,
+          "misses": 0,
+          "errors": 0,
+          "bytes_read": 2895901125,
+          "bytes_written": 0,
+          "duration_seconds": 203.2
+        }
+      ],
+      "jobs": [
+        {
+          "job_id": 102373102926,
+          "name": "Formatting and dependency guards",
+          "conclusion": "success",
+          "job_seconds": 15.0,
+          "steps": []
+        },
+        {
+          "job_id": 102373103109,
+          "name": "BoringCache e2e cold",
+          "conclusion": "success",
+          "job_seconds": 213.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 4.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 186.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 3.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103140,
+          "name": "GitHub clippy cold",
+          "conclusion": "success",
+          "job_seconds": 157.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 136.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 6.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103152,
+          "name": "GitHub test-tests cold",
+          "conclusion": "success",
+          "job_seconds": 306.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 278.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 7.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103153,
+          "name": "BoringCache test-tests cold",
+          "conclusion": "success",
+          "job_seconds": 320.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 299.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103197,
+          "name": "BoringCache test-doc cold",
+          "conclusion": "success",
+          "job_seconds": 122.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 103.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103202,
+          "name": "GitHub e2e cold",
+          "conclusion": "success",
+          "job_seconds": 195.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 13.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 156.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 1.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103221,
+          "name": "BoringCache smoke cold",
+          "conclusion": "success",
+          "job_seconds": 227.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 207.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103227,
+          "name": "BoringCache test-lib cold",
+          "conclusion": "success",
+          "job_seconds": 181.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 156.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103297,
+          "name": "GitHub test-lib cold",
+          "conclusion": "success",
+          "job_seconds": 199.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 175.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 7.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103304,
+          "name": "GitHub test-doc cold",
+          "conclusion": "success",
+          "job_seconds": 165.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 13.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 135.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 7.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103349,
+          "name": "BoringCache clippy cold",
+          "conclusion": "success",
+          "job_seconds": 171.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 148.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102373103358,
+          "name": "GitHub smoke cold",
+          "conclusion": "success",
+          "job_seconds": 198.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 9.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 142.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 38.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250118,
+          "name": "GitHub test-lib warm",
+          "conclusion": "success",
+          "job_seconds": 115.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 14.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 79.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250172,
+          "name": "BoringCache test-doc warm",
+          "conclusion": "success",
+          "job_seconds": 36.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 3.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 15.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 1.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250208,
+          "name": "GitHub test-doc warm",
+          "conclusion": "success",
+          "job_seconds": 65.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 6.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 40.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 1.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250211,
+          "name": "GitHub clippy warm",
+          "conclusion": "success",
+          "job_seconds": 66.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 7.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 39.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250224,
+          "name": "GitHub smoke warm",
+          "conclusion": "success",
+          "job_seconds": 114.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 7.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 86.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250228,
+          "name": "GitHub e2e warm",
+          "conclusion": "success",
+          "job_seconds": 94.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 13.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 8.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 62.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250240,
+          "name": "BoringCache test-lib warm",
+          "conclusion": "success",
+          "job_seconds": 62.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 12.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 6.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 33.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250292,
+          "name": "BoringCache e2e warm",
+          "conclusion": "success",
+          "job_seconds": 58.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 4.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 36.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 1.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250323,
+          "name": "GitHub test-tests warm",
+          "conclusion": "success",
+          "job_seconds": 194.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 13.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 8.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 163.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250324,
+          "name": "BoringCache test-tests warm",
+          "conclusion": "success",
+          "job_seconds": 147.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 12.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 6.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 119.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250371,
+          "name": "BoringCache smoke warm",
+          "conclusion": "success",
+          "job_seconds": 89.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 3.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 66.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102375250399,
+          "name": "BoringCache clippy warm",
+          "conclusion": "success",
+          "job_seconds": 33.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Require the prepared GitHub cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 3.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 12.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "34322956237",
+      "url": "https://github.com/boringcache/moagan/actions/runs/34322956237",
+      "metrics": {
+        "session_count": 50,
+        "total_hits": 20,
+        "total_misses": 3,
+        "total_errors": 0,
+        "total_bytes_read": 2968849171,
+        "total_bytes_written": 1106456848,
+        "duration_seconds": 186.3,
+        "read_label": "Remote read lookups",
+        "hit_label": "Remote hits",
+        "miss_label": "Missed lookups",
+        "hit_count_label": "remote hit",
+        "miss_count_label": "missed lookup"
+      },
+      "phases": [
+        {
+          "job": "commit",
+          "phases": [],
+          "tools": [
+            "archive",
+            "sccache"
+          ],
+          "cache_layers": [
+            "dependencies",
+            "target",
+            "sccache"
+          ],
+          "hits": 20,
+          "misses": 3,
+          "errors": 0,
+          "bytes_read": 2968849171,
+          "bytes_written": 1106456848,
+          "duration_seconds": 624.3
+        }
+      ],
+      "jobs": [
+        {
+          "job_id": 102376269577,
+          "name": "BoringCache smoke commit",
+          "conclusion": "success",
+          "job_seconds": 124.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 101.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 1.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269730,
+          "name": "GitHub test-lib commit",
+          "conclusion": "success",
+          "job_seconds": 94.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 6.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 71.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 1.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269769,
+          "name": "BoringCache clippy commit",
+          "conclusion": "success",
+          "job_seconds": 73.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 3.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 53.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269822,
+          "name": "BoringCache test-lib commit",
+          "conclusion": "success",
+          "job_seconds": 168.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 12.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 18.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 125.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269828,
+          "name": "BoringCache test-doc commit",
+          "conclusion": "success",
+          "job_seconds": 92.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 12.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 17.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 50.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269835,
+          "name": "GitHub test-doc commit",
+          "conclusion": "success",
+          "job_seconds": 67.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 8.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 39.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269879,
+          "name": "BoringCache e2e commit",
+          "conclusion": "success",
+          "job_seconds": 91.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 72.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269913,
+          "name": "GitHub clippy commit",
+          "conclusion": "success",
+          "job_seconds": 67.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 6.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 42.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269937,
+          "name": "GitHub test-tests commit",
+          "conclusion": "success",
+          "job_seconds": 189.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 9.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 160.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376269947,
+          "name": "GitHub e2e commit",
+          "conclusion": "success",
+          "job_seconds": 90.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 5.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 67.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376270010,
+          "name": "BoringCache test-tests commit",
+          "conclusion": "success",
+          "job_seconds": 231.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 11.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "success",
+              "seconds": 1.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 3.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 208.0
+            },
+            {
+              "name": "Post Configure BoringCache dependency caching",
+              "conclusion": "success",
+              "seconds": 2.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        },
+        {
+          "job_id": 102376270124,
+          "name": "GitHub smoke commit",
+          "conclusion": "success",
+          "job_seconds": 112.0,
+          "steps": [
+            {
+              "name": "Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 10.0
+            },
+            {
+              "name": "Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 8.0
+            },
+            {
+              "name": "Install the native compiler-cache prerequisite",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Configure BoringCache dependency caching",
+              "conclusion": "skipped",
+              "seconds": 0.0
+            },
+            {
+              "name": "Run the upstream check",
+              "conclusion": "success",
+              "seconds": 85.0
+            },
+            {
+              "name": "Post Restore the corrected upstream Cargo cache",
+              "conclusion": "success",
+              "seconds": 0.0
+            },
+            {
+              "name": "Post Run ./operator/.github/actions/boringcache-setup",
+              "conclusion": "success",
+              "seconds": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cold_target_entries": [
+    {
+      "entry_id": "14f2e17a-91a3-4459-a19e-482e5a1cdf27",
+      "tag": "moagan-34322754671-test-tests-target-toolchain-ca56c9fadb6bba07-graph-69c600d0c8cf0849-branch-boringcache-validation-ubuntu-24-x86_64",
+      "compressed_bytes": 1189852139,
+      "blob_count": 1001,
+      "manifest_root_digest": "sha256:f78d71b78a81440dd73ce1c40d1cb441dc2b0e9356c2c2f23e8815bea1d87d36"
+    },
+    {
+      "entry_id": "bd234084-a2bb-4687-a7a1-ddba8a3e382d",
+      "tag": "moagan-34322754671-test-doc-target-toolchain-ca56c9fadb6bba07-graph-69c600d0c8cf0849-branch-boringcache-validation-ubuntu-24-x86_64",
+      "compressed_bytes": 291165486,
+      "blob_count": 238,
+      "manifest_root_digest": "sha256:c8ab5f8ec18e2318444ab27ab92aea3386c91d6ebb2f68361ecd7aadd746ad17"
+    },
+    {
+      "entry_id": "3300e400-88ff-4e5c-8f1b-00bf89bed95c",
+      "tag": "moagan-34322754671-e2e-target-toolchain-ca56c9fadb6bba07-graph-69c600d0c8cf0849-branch-boringcache-validation-ubuntu-24-x86_64",
+      "compressed_bytes": 315062269,
+      "blob_count": 250,
+      "manifest_root_digest": "sha256:a554a53115b10d8b8282aae66bc365010f16791e002f7996acdb8a061ea72bd5"
+    },
+    {
+      "entry_id": "5e07beea-64b9-4b27-935f-e8bf16eafbe7",
+      "tag": "moagan-34322754671-smoke-target-toolchain-ca56c9fadb6bba07-graph-69c600d0c8cf0849-branch-boringcache-validation-ubuntu-24-x86_64",
+      "compressed_bytes": 315062534,
+      "blob_count": 250,
+      "manifest_root_digest": "sha256:f9859c2d315151f1dc38093d0f0192d7a0c9ac1f3989dfe1cb11eb12ade512d6"
+    },
+    {
+      "entry_id": "a78196d4-b6f9-4b72-af3f-dc9b4b01073e",
+      "tag": "moagan-34322754671-test-lib-target-toolchain-ca56c9fadb6bba07-graph-69c600d0c8cf0849-branch-boringcache-validation-ubuntu-24-x86_64",
+      "compressed_bytes": 337714508,
+      "blob_count": 274,
+      "manifest_root_digest": "sha256:66561c5253aa259f3320c6c4c227e53f6e37b2751dcf38813ca74f7917b60eb6"
+    },
+    {
+      "entry_id": "34cf8c03-4622-4b35-b7e7-6c152ce8758a",
+      "tag": "moagan-34322754671-clippy-target-toolchain-ca56c9fadb6bba07-graph-69c600d0c8cf0849-branch-boringcache-validation-ubuntu-24-x86_64",
+      "compressed_bytes": 196474475,
+      "blob_count": 145,
+      "manifest_root_digest": "sha256:d835985bc155a154523b7d04c177c72c6efd2439855f3a76bcc013edb073b12e"
+    }
+  ],
+  "limits": [
+    "Single matched sample for each phase and provider; job times include setup, caches, workload, evidence and cleanup.",
+    "Cold means fresh logical tags in a shared workspace, with prior content eligible for deduplication.",
+    "BoringCache retains complete typed targets; Swatinem prunes target contents, including test executables. Entry byte sums are not equivalent physical-storage scopes.",
+    "Native sccache 0.17.0 lacks automatic cross-worktree Rust reuse; this test does not establish local-machine reuse.",
+    "The first complete run 34321522176 was excluded from the final speed table because some GitHub warm keys changed with preinstalled runner toolchains."
+  ]
+}

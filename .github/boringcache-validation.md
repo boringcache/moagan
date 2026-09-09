@@ -1,11 +1,22 @@
 # Moagan cache validation
 
-Qualified for validation of cache reuse across parallel Rust checks, dependency storage deduplication, and reduced cache churn. [Cold and warm run](https://github.com/boringcache/moagan/actions/runs/34322754671).
+**Qualified.** All 36 workload checks passed: six checks on each provider, across cold, fresh-runner warm and a real upstream revision. Formatting and dependency guards also passed. [Cold/warm run](https://github.com/boringcache/moagan/actions/runs/34322754671) · [Revision run](https://github.com/boringcache/moagan/actions/runs/34322956237) · [Measurements](boringcache-validation.json).
 
-One v1.21.0 is pinned to `90111526eb218a7f1e119ac2b29f765bd4d82734` and uses GitHub OIDC. One manages dependency archives; the public Cargo adapter manages typed target snapshots and native sccache. Each check has its own target tag and shares dependency/compiler tags.
+One v1.21.0 is pinned to `90111526eb218a7f1e119ac2b29f765bd4d82734` and uses GitHub OIDC. One manages dependency archives; the public Cargo adapter manages typed target snapshots and native sccache. Both providers use only Rust 1.97.1, the upstream two-job Cargo setting and the same checks. GitHub warm jobs require an exact cache hit.
 
-Both providers use Rust 1.97.1, the upstream two-job Cargo setting, and the same clippy, test, smoke and e2e commands. The baseline uses Swatinem/rust-cache. Formatting and dependency guards also run. Test binaries receive the same runtime environment, including isolation of nested Cargo builds from the outer target directory.
+Each cell is **GitHub / BoringCache whole-job seconds**:
 
-Status: all six BoringCache cold and warm checks passed in [the preceding run](https://github.com/boringcache/moagan/actions/runs/34321522176). The e2e target save uploaded 2 of 250 blobs; its remaining blobs already existed. Some GitHub warm jobs missed because the runner’s unrelated preinstalled Rust version changed its cache key. The fresh comparison retains only the pinned toolchain on both providers and requires a GitHub warm hit. The next real upstream revision remains to be run. Earlier harness runs that suppressed target publication are excluded.
+| Check | Cold | Warm | Next revision |
+|---|---:|---:|---:|
+| Clippy | 157 / 171 | 66 / 33 | 67 / 73 |
+| Integration tests | 306 / 320 | 194 / 147 | 189 / 231 |
+| Library and binary tests | 199 / 181 | 115 / 62 | 94 / 168 |
+| Smoke | 198 / 227 | 114 / 89 | 112 / 124 |
+| End-to-end | 195 / 213 | 94 / 58 | 90 / 91 |
+| Documentation | 165 / 122 | 65 / 36 | 67 / 92 |
 
-The report will distinguish logical target size, compressed cache size and newly uploaded blobs. Summing overlapping cache-entry sizes does not measure unique storage. CI results do not establish local-machine or cross-worktree reuse.
+The six BoringCache warm jobs restored **18 target/dependency entries**, with zero reported cache errors and no uploads. On the real revision, Clippy published its 780 MB target in 2.3 seconds and needed **9 of 146 blobs** uploaded. The existing blobs were reused.
+
+BoringCache was faster on all six warm jobs in this sample; GitHub was faster on the revision jobs. Complete target retention improves warm reuse but adds publication work after source changes. Swatinem prunes target contents, including test executables, so cache-entry size sums do not compare equivalent retained data. Unique physical storage savings are not quantified here.
+
+These are single samples. Cold uses new tags in a shared workspace whose content can already exist. Cross-worktree and local-machine reuse are not established by these CI runs.
