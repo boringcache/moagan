@@ -15,11 +15,13 @@ tag = "moagan-VALIDATION_SEED-registry-index"
 tag = "moagan-VALIDATION_SEED-git-db"
 
 [profiles.cargo]
-entries = ["cargo-target", "cargo-registry-cache", "cargo-registry-index", "cargo-git-db"]
+entries = ["cargo-target", "cargo-git-db"]
+
+[profiles.dependencies]
+entries = ["cargo-registry-cache", "cargo-registry-index"]
 
 [adapters.cargo]
 profiles = ["cargo"]
-command = ["bash", ".github/boringcache-build.sh"]
 compiler-cache = "sccache"
 fail-on-cache-error = true
 
