@@ -1,1 +1,27 @@
 workspace = "boringcache/benchmarks"
+
+[entries.cargo-target]
+kind = "cargo-target"
+tag = "moagan-VALIDATION_SEED-VALIDATION_CHECK-target"
+path = "target"
+
+[entries.cargo-registry-cache]
+tag = "moagan-VALIDATION_SEED-registry-cache"
+
+[entries.cargo-registry-index]
+tag = "moagan-VALIDATION_SEED-registry-index"
+
+[entries.cargo-git-db]
+tag = "moagan-VALIDATION_SEED-git-db"
+
+[profiles.cargo]
+entries = ["cargo-target", "cargo-registry-cache", "cargo-registry-index", "cargo-git-db"]
+
+[adapters.cargo]
+profiles = ["cargo"]
+command = ["bash", ".github/boringcache-build.sh"]
+compiler-cache = "sccache"
+fail-on-cache-error = true
+
+[adapters.sccache]
+tag = "moagan-VALIDATION_SEED-rust"

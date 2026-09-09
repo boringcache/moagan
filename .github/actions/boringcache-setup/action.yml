@@ -1,0 +1,36 @@
+name: Prepare Moagan validation
+description: Use the same pinned source and Rust toolchain for both cache providers.
+inputs:
+  source_ref:
+    required: true
+    description: Exact upstream source commit
+  cache_seed:
+    required: true
+    description: Cache namespace for this comparison
+  check:
+    required: true
+    description: Upstream CI check
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      with:
+        ref: ${{ inputs.source_ref }}
+        path: source
+        persist-credentials: false
+    - uses: dtolnay/rust-toolchain@6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772
+      with:
+        toolchain: 1.97.1
+        components: rustfmt,clippy
+    - name: Apply the native cache plan
+      shell: bash
+      env:
+        VALIDATION_SEED: ${{ inputs.cache_seed }}
+        VALIDATION_CHECK: ${{ inputs.check }}
+      run: |
+        cp operator/.boringcache.toml source/.boringcache.toml
+        cp operator/.github/boringcache-build.sh source/.github/boringcache-build.sh
+        sed -i "s/VALIDATION_SEED/$VALIDATION_SEED/g; s/VALIDATION_CHECK/$VALIDATION_CHECK/g" source/.boringcache.toml
+        mkdir -p "$RUNNER_TEMP/validation"
+        git -C source rev-parse HEAD > "$RUNNER_TEMP/validation/source.txt"
+        rustc -Vv > "$RUNNER_TEMP/validation/rustc.txt"
